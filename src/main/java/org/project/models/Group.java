@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -36,4 +37,18 @@ public class Group {
         currentId = id;
     }
 
+    public String toStringJson () {
+        return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
+                .append("numberName", numberName)
+                .append("studentsId", studentsId)
+                .append("id", id)
+                .toString();
+    }
+//    private List<Student> getStudentListFromId(){
+//        List<Student> result = new ArrayList<>();
+//        for (Integer studentId : studentsId) {
+//            result.add();
+//        }
+//        return result;
+//    }
 }

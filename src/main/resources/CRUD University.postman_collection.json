@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "1f5173bf-7d02-4b0d-8a55-bc090a0b120f",
+		"name": "CRUD University",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35997191"
+	},
+	"item": [
+		{
+			"name": "Students requests",
+			"item": [
+				{
+					"name": "All Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Students By Params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students?lastName=second&firstName=first",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "lastName",
+									"value": "second"
+								},
+								{
+									"key": "firstName",
+									"value": "first"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"Anton\",\n    \"lastName\" : \"Kotin\",\n    \"birthDate\" : \"1985-07-06\",\n    \"phoneNumber\" : \"+7 (234) 234 44 44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/students?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Student By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 4,\n        \"firstName\": \"first1123\",\n        \"lastName\": \"second1123\",\n        \"birthDate\": \"2024-07-08\",\n        \"phoneNumber\": \"234234234\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/students?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"students"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teachers requests",
+			"item": [
+				{
+					"name": "All Teachers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/teachers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teachers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Vadim Vadimovich\",\n    \"age\": 56,\n    \"subjects\": [\n        \"ENGLISH\",\n        \"GEOGRAPHY\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/teachers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teachers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Teacher By Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Anton Stepanovich\",\n    \"age\": 26,\n    \"subjects\": [\n        \"ENGLISH\",\n        \"GEOGRAPHY\",\n        \"MATH\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/teachers?id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teachers"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/teachers?id=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"teachers"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Groups requests",
+			"item": [
+				{
+					"name": "All Groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/groups/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"groups",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TimeTable",
+			"item": [
+				{
+					"name": "Get TimeTable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/timetable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"timetable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -22,7 +22,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import static org.project.constants.Constants.*;
 @Slf4j
-@WebServlet("/students/*")
+@WebServlet("/" + STUDENTS + "/*")
 public class StudentsServlet extends HttpServlet {
     JsonService jsonService;
      //Logger logger = LoggerFactory.getLogger(StudentsServlet.class.getName());
@@ -36,7 +36,7 @@ public class StudentsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String result;
-        if (req.getRequestURI().startsWith("/students/")) {
+        if (req.getRequestURI().startsWith("/" + STUDENTS + "/")) {
             result = getStudentById(req);
         } else {result = generateStudentsList(req);}
         resp.setContentType("application/json");
@@ -103,7 +103,7 @@ public class StudentsServlet extends HttpServlet {
         return jsonService.getStudents().add(new Student(firstName,lastName,birthDate,phoneNumber));
     }
     private static LocalDate getLocalDate(String date) {
-        return LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd").withLocale(Locale.ENGLISH));
+        return LocalDate.parse(date, FORMATTER);
     }
 
     @SneakyThrows

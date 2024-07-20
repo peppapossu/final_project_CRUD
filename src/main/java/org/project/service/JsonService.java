@@ -15,6 +15,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.project.constants.Constants.*;
 
@@ -24,6 +26,7 @@ import static org.project.constants.Constants.*;
 
 public class JsonService {
     private ArrayList<Student> students;
+    private Map<Integer,Student> studentsMap;
     private ArrayList<Teacher> teachers;
     private ArrayList<Group> groups;
     private ArrayList<TimeTable> timeTables;
@@ -40,6 +43,7 @@ public class JsonService {
         groups = jsonService.getGroups();
         timeTables = jsonService.getTimeTables();
         //setJsonServiceToClasses(jsonService);
+        generateMaps(jsonService);
         setCurrentsIdToClasses();
         return jsonService;
     }
@@ -76,5 +80,16 @@ public class JsonService {
         File targetFile = new File("/Users/admin/Downloads/project-maven/tree/Servlet_project_2/src/main/resources/out_data.json");
         if (targetFile.exists()) {
         Files.copy(fileToSave.toPath(),targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);}
+    }
+
+    private void generateMaps(JsonService jsonService){
+        generateStudentsMap(jsonService);
+    }
+
+    private void generateStudentsMap(JsonService jsonService) {
+        jsonService.studentsMap = new HashMap<>();
+        for (Student student : students) {
+            jsonService.studentsMap.put(student.getId(), student);
+        }
     }
 }
