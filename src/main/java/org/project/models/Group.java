@@ -44,11 +44,5 @@ public class Group {
                 .append("id", id)
                 .toString();
     }
-//    private List<Student> getStudentListFromId(){
-//        List<Student> result = new ArrayList<>();
-//        for (Integer studentId : studentsId) {
-//            result.add();
-//        }
-//        return result;
-//    }
+
 }
