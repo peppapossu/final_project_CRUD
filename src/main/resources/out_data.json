@@ -1,0 +1,191 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "firstName": "Ivan",
+      "lastName": "Ivanov",
+      "birthDate": "1985-11-26",
+      "phoneNumber": "+7(676)123-12-23"
+    },
+    {
+      "id": 2,
+      "firstName": "Vadim",
+      "lastName": "Simonov",
+      "birthDate": "1986-10-24",
+      "phoneNumber": "+7(676)123-12-23"
+    },
+    {
+      "id": 3,
+      "firstName": "Roman",
+      "lastName": "Togov",
+      "birthDate": "1975-11-16",
+      "phoneNumber": "+7(674)133-12-23"
+    },
+    {
+      "id": 4,
+      "firstName": "Alex",
+      "lastName": "Bolotov",
+      "birthDate": "1945-11-26",
+      "phoneNumber": "+7(646)523-12-23"
+    },
+    {
+      "id": 5,
+      "firstName": "Anna",
+      "lastName": "Ivanova",
+      "birthDate": "2000-07-08",
+      "phoneNumber": "00000000"
+    },
+    {
+      "id": 6,
+      "firstName": "Anna",
+      "lastName": "Ivanova",
+      "birthDate": "2000-07-08",
+      "phoneNumber": "00000000"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Alexandr Grigorevich",
+      "age": 36,
+      "subjects": [
+        "GEOGRAPHY",
+        "ENGLISH"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Vadim Vadimovich",
+      "age": 56,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Anton Stepanovich",
+      "age": 26,
+      "subjects": [
+        "ENGLISH",
+        "GEOGRAPHY",
+        "MATH"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "numberName": "100",
+      "studentsId": [
+        1,
+        2
+      ],
+      "id": 1
+    },
+    {
+      "numberName": "200",
+      "studentsId": [
+        3,
+        4
+      ],
+      "id": 2
+    }
+  ],
+  "timeTables": [
+    {
+      "startTime": "2024-07-14 12:15",
+      "endTime": "2024-07-14 13:00",
+      "groupId": 1,
+      "teacherId": 2,
+      "id": 1
+    },
+    {
+      "startTime": "2024-07-14 13:00",
+      "endTime": "2024-07-14 13:45",
+      "groupId": 2,
+      "teacherId": 1,
+      "id": 2
+    }
+  ]
+}
