@@ -36,6 +36,5 @@ public class Teacher {
     }
     public static void setCurrentId(int id){
         currentId = id;
-        int i = 0;
     }
 }

@@ -35,19 +35,19 @@ public class TimeTable {
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
-                .append("startTime", startTime.format(FORMATTER))
-                .append("endTime", endTime.format(FORMATTER))
+                .append("startTime", startTime.format(FORMATTER_TIMETABLE))
+                .append("endTime", endTime.format(FORMATTER_TIMETABLE))
                 .append("groupId", groupId)
                 .append("teacherId", teacherId)
                 .append("id", id)
                 .toString();
     }
     public void setStartTime(String startTime) {
-        this.startTime = LocalDateTime.parse(startTime, FORMATTER);
+        this.startTime = LocalDateTime.parse(startTime, FORMATTER_TIMETABLE);
     }
 
     public void setEndTime(String startTime) {
-        this.endTime = LocalDateTime.parse(startTime,FORMATTER);
+        this.endTime = LocalDateTime.parse(startTime,FORMATTER_TIMETABLE);
     }
     public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;

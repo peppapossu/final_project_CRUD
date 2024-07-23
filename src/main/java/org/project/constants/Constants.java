@@ -1,11 +1,9 @@
 package org.project.constants;
-
-import lombok.Getter;
-
+import lombok.experimental.UtilityClass;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-@Getter
+@UtilityClass
 public class Constants {
     public static final String FIRSTNAME = "firstName";
     public static final String LASTNAME = "lastName";
@@ -16,7 +14,8 @@ public class Constants {
     public static final String ORIGINAL_DB = "data.json";
     public static final String REWRITABLE_DB = "out_data.json";
     public static final String JSON_DB = "DB";
-    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm").withLocale(Locale.ENGLISH);
+    public static final DateTimeFormatter FORMATTER_BIRTHDATE = DateTimeFormatter.ofPattern("yyyy-MM-dd").withLocale(Locale.ENGLISH);
+    public static final DateTimeFormatter FORMATTER_TIMETABLE = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm").withLocale(Locale.ENGLISH);
     public static final String PROPERTY_SERVICE = "propertyService";
     public static final String STUDENTS = "students";
     public static final String TEACHERS = "teachers";

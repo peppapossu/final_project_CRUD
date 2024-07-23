@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.project.service.JsonService;
+import org.project.service.ServletService;
+
 import java.io.IOException;
 import static org.project.constants.Constants.JSON_DB;
 import static org.project.constants.Constants.TIMETABLE;
@@ -26,10 +28,7 @@ public class TimeTablesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String result = jsonService.getTimeTables().toString();
-        resp.setContentType("application/json");
-        resp.setCharacterEncoding("UTF-8");
-        resp.setHeader("Content-type", "application/json");
-        //resp.setStatus(resp.SC_OK);
+        ServletService.setJsonResponse(resp);
         resp.getWriter().write(result);
     }
 

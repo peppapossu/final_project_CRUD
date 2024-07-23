@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.*;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.project.models.Group;
 import org.project.models.Student;
 import org.project.models.Teacher;
@@ -42,7 +44,6 @@ public class JsonService {
         teachers = jsonService.getTeachers();
         groups = jsonService.getGroups();
         timeTables = jsonService.getTimeTables();
-        //setJsonServiceToClasses(jsonService);
         generateMaps(jsonService);
         setCurrentsIdToClasses();
         return jsonService;
@@ -62,20 +63,9 @@ public class JsonService {
 
     @SneakyThrows
     public void saveToFileJson(){
-        StringBuilder data = new StringBuilder();
-        data.append("{\n");
-        data.append("\"students\" : \n");
-        data.append(students.toString()).append(",\n");
-        data.append("\"teachers\" : \n");
-        data.append(teachers.toString()).append(",\n");
-        data.append("\"groups\" : \n");
-        data.append(groups.toString()).append(",\n");
-        data.append("\"timeTables\" : \n");
-        data.append(timeTables.toString()).append("\n");
-        data.append("}\n");
         File fileToSave = new File ((Paths.get(JsonService.class.getClassLoader().getResource(REWRITABLE_DB).toURI())).toString());
         FileOutputStream fos = new FileOutputStream(fileToSave);
-        fos.write(data.toString().getBytes());
+        fos.write(this.toString().getBytes());
         fos.close();
         File targetFile = new File("/Users/admin/Downloads/project-maven/tree/Servlet_project_2/src/main/resources/out_data.json");
         if (targetFile.exists()) {
@@ -91,5 +81,16 @@ public class JsonService {
         for (Student student : students) {
             jsonService.studentsMap.put(student.getId(), student);
         }
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
+                .append("students", students)
+                .append("studentsMap", studentsMap)
+                .append("teachers", teachers)
+                .append("groups", groups)
+                .append("timeTables", timeTables)
+                .toString();
     }
 }
